@@ -8,8 +8,9 @@ core.register_node("lamps:lamp_wood", {
 		"default_wood.png^lamps_overlay.png",
 		"default_wood.png^lamps_overlay.png"
 	},
-	groups = {choppy = 3, oddly_breakable_by_hand = 2},
+	groups = {choppy = 3, oddly_breakable_by_hand = 2,attached_node = 1},
 	drawtype = "nodebox",
+	light_source = 11,
 	paramtype = "light",
 	paramtype2 = "facedir",
 	node_box = {
@@ -38,6 +39,7 @@ core.register_node("lamps:track_end_lamp", {
 	},
 	groups = {choppy = 3, oddly_breakable_by_hand = 2},
 	drawtype = "nodebox",
+	light_source = 11,
 	paramtype = "light",
 	paramtype2 = "facedir",
 	node_box = {
@@ -60,6 +62,7 @@ core.register_node("lamps:track_end_lamp_adv", {
 	},
 	groups = {choppy = 3, oddly_breakable_by_hand = 2},
 	drawtype = "nodebox",
+	light_source = 11,
 	paramtype = "light",
 	paramtype2 = "facedir",
 	node_box = {
@@ -70,6 +73,35 @@ core.register_node("lamps:track_end_lamp_adv", {
 	}
 })
 end
+
+core.register_node("lamps:track_lamp", {
+	description = "Track Lamp",
+	tiles = {
+		"lamps_track_end_side.png",
+		"lamps_track_end_side.png",
+		"lamps_track_end_side.png^lamps_track_front.png",
+		"lamps_track_end_side.png",
+		"lamps_track_side.png",
+		"lamps_track_side.png"
+	},
+	groups = {choppy = 3, oddly_breakable_by_hand = 2},
+	drawtype = "nodebox",
+	light_source = 11,
+	paramtype = "light",
+	paramtype2 = "facedir",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.1875, -0.5, -0.1875, 0.125, 0.0625, 0.1875},
+			{0.125, -0.5, -0.1875, 0.1875, 0.0625, -0.125},
+			{0.125, -0.5, 0.125, 0.1875, 0.0625, 0.1875},
+			{-0.1875, -0.5, -0.1875, 0.1875, -0.4375, 0.1875},
+			{-0.1875, 0.0625, -0.1875, 0.1875, 0.125, 0.1875},
+			{-0.0625, -0.5, -0.0625, 0.0625, 0.3125, 0.0625},
+			{-0.125, 0.25, -0.125, 0.125, 0.3125, 0.125},
+		}
+	}
+})
 
 core.register_craft({
 	output = "lamps:lamp_wood",
@@ -109,3 +141,13 @@ core.register_craft({
 	}
 })
 end
+
+core.register_craft({
+	output = "lamps:track_lamp",
+	recipe = {
+		{"dye:red", "default:steel_ingot", "dye:red"},
+		{"dye:white", "default:torch", "dye:white"},
+		{"dye:red", "default:steel_ingot", "dye:red"}
+
+	}
+})
