@@ -49,7 +49,7 @@ core.register_node("lamps:track_end_lamp", {
 		}
 	}
 })
-if minetest.get_modpath("advtrains") then
+if core.get_modpath("advtrains") then
 core.register_node("lamps:track_end_lamp_adv", {
 	description = "Track End Lamp for advtrains mod",
 	tiles = {
@@ -103,18 +103,24 @@ core.register_node("lamps:track_lamp", {
 	}
 })
 
-core.register_node('lamps:metal_lantern', {
+core.register_node("lamps:metal_lantern", {
 	description = 'Metal Lantern',
-	tiles = {'lamps_metal_lantern_top.png', 'lamps_metal_lantern_bottom.png', 'lamps_metal_lantern_side.png'},
-	groups = {choppy=1,oddly_breakable_by_hand=2},
+	tiles = {
+		"lamps_metal_lantern_top.png",
+		"lamps_metal_lantern_bottom.png",
+		"lamps_metal_lantern_side.png"
+	},
+	groups = {choppy = 1,oddly_breakable_by_hand = 2},
 	paramtype = 'light',
 	light_source = 13,
 	drawtype = 'nodebox',
-	node_box= { type = 'fixed', 
-				fixed = { 
-					{-0.375, -0.5, -0.375, 0.375, 0.25, 0.375 }, 
-					{-0.25, 0.25, -0.25, 0.25, 0.5, 0.25}
-				} },
+	node_box= {
+		type = 'fixed',
+		fixed = {
+			{-0.375, -0.5, -0.375, 0.375, 0.25, 0.375 },
+			{-0.25, 0.25, -0.25, 0.25, 0.5, 0.25}
+		}
+	},
 })
 
 core.register_craft({
@@ -134,26 +140,23 @@ core.register_craft({
 		{"default:steel_ingot", "default:torch", "default:steel_ingot"}
 	}
 })
+
 if core.get_modpath("advtrains") then
-core.register_craft({
-	output = "lamps:track_end_lamp",
-	recipe = {
-		{"", "", ""},
-		{"", "lamps:track_end_lamp_adv", ""},
-		{"", "", ""}
-	}
-})
+	core.register_craft({
+		output = "lamps:track_end_lamp",
+		recipe = {
+			{"lamps:track_end_lamp_adv"}
+		}
+	})
 end
 
 if core.get_modpath("advtrains") then
-core.register_craft({
-	output = "lamps:track_end_lamp_adv",
-	recipe = {
-		{"", "", ""},
-		{"", "lamps:track_end_lamp", ""},
-		{"", "", ""}
-	}
-})
+	core.register_craft({
+		output = "lamps:track_end_lamp_adv",
+		recipe = {
+		 {"lamps:track_end_lamp"},
+	 }
+	})
 end
 
 core.register_craft({
@@ -162,7 +165,6 @@ core.register_craft({
 		{"dye:red", "default:steel_ingot", "dye:red"},
 		{"dye:white", "default:torch", "dye:white"},
 		{"dye:red", "default:steel_ingot", "dye:red"}
-
 	}
 })
 
