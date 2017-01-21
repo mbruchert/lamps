@@ -174,6 +174,29 @@ core.register_node("lamps:paper_lamp_small", {
 	}
 })
 
+core.register_node("lamps:mese_lamp_small", {
+	description = "Small mese Lamp",
+	tiles = {
+		"lamps_mese_top_1.png",
+		"lamps_mese_top_2.png",
+		"lamps_mese_small_2.png",
+		"lamps_mese_small.png",
+		"lamps_mese_small_front.png",
+		"lamps_mese_small_front.png"
+	},
+	groups = {choppy = 3, oddly_breakable_by_hand = 2,},
+	drawtype = "nodebox",
+	light_source = 15,
+	paramtype = "light",
+	paramtype2 = "facedir",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.25, -0.25, 0, 0.25, 0.25, 0.5},
+		}
+	}
+})
+
 core.register_node("lamps:metal_lantern", {
 	description = 'Metal Lantern',
 	tiles = {
@@ -193,6 +216,23 @@ core.register_node("lamps:metal_lantern", {
 		}
 	},
 })
+
+-- override
+
+--[[core.override_item("default:meselamp", {
+    tiles = {"lamps_mese.png"},
+})
+
+
+minetest.override_item("default:meselamp", {
+	tiles = {
+		{"lamps_mese.png"},
+	}
+})
+]]
+
+
+--crafting
 
 core.register_craft({
 	output = "lamps:lamp_wood",
@@ -226,7 +266,7 @@ if core.get_modpath("advtrains") then
 		output = "lamps:track_end_lamp_adv",
 		recipe = {
 		 {"lamps:track_end_lamp"},
-	 }
+	 	}
 	})
 end
 
@@ -261,6 +301,13 @@ core.register_craft({
 	output = "lamps:paper_lamp_small 8",
 	recipe = {
 		{"lamps:paper_lamp"}
+	}
+})
+
+core.register_craft({
+	output = "lamps:mese_lamp_small 8",
+	recipe = {
+		{"default:meselamp"}
 	}
 })
 
