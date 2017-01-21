@@ -103,6 +103,20 @@ core.register_node("lamps:track_lamp", {
 	}
 })
 
+core.register_node('lamps:metal_lantern', {
+	description = 'Metal Lantern',
+	tiles = {'lamps_metal_lantern_top.png', 'lamps_metal_lantern_bottom.png', 'lamps_metal_lantern_side.png'},
+	groups = {choppy=1,oddly_breakable_by_hand=2},
+	paramtype = 'light',
+	light_source = 13,
+	drawtype = 'nodebox',
+	node_box= { type = 'fixed', 
+				fixed = { 
+					{-0.375, -0.5, -0.375, 0.375, 0.25, 0.375 }, 
+					{-0.25, 0.25, -0.25, 0.25, 0.5, 0.25}
+				} },
+})
+
 core.register_craft({
 	output = "lamps:lamp_wood",
 	recipe = {
@@ -149,5 +163,14 @@ core.register_craft({
 		{"dye:white", "default:torch", "dye:white"},
 		{"dye:red", "default:steel_ingot", "dye:red"}
 
+	}
+})
+
+core.register_craft({
+	output = 'lamps:metal_lantern',
+	recipe = {
+		{'', 'default:steel_ingot', ''},
+		{'default:glass', 'default:torch', 'default:glass'},
+		{'dye:black', 'default:steel_ingot', 'dye:black'},
 	}
 })
