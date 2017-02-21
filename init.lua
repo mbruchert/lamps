@@ -115,7 +115,7 @@ core.register_node("lamps:lamp_steel_wall", {
 	},
 	groups = {choppy = 3, oddly_breakable_by_hand = 2,},
 	drawtype = "nodebox",
-	light_source = 15,
+	light_source = 14,
 	paramtype = "light",
 	paramtype2 = "facedir",
 	node_box = {
@@ -145,7 +145,7 @@ core.register_node("lamps:paper_lamp", {
 	},
 	groups = {choppy = 3, oddly_breakable_by_hand = 2,},
 	drawtype = "nodebox",
-	light_source = 15,
+	light_source = 14,
 	paramtype = "light",
 
 
@@ -163,7 +163,7 @@ core.register_node("lamps:paper_lamp_small", {
 	},
 	groups = {choppy = 3, oddly_breakable_by_hand = 2,},
 	drawtype = "nodebox",
-	light_source = 15,
+	light_source = 14,
 	paramtype = "light",
 	paramtype2 = "facedir",
 	node_box = {
@@ -186,7 +186,7 @@ core.register_node("lamps:mese_lamp_small", {
 	},
 	groups = {choppy = 3, oddly_breakable_by_hand = 2,},
 	drawtype = "nodebox",
-	light_source = 15,
+	light_source = 14,
 	paramtype = "light",
 	paramtype2 = "facedir",
 	node_box = {
